@@ -55,18 +55,3 @@ Open this in your browser:
 http://127.0.0.1:5000
 ```
 
-## Deploy without Docker
-
-Use these commands on a Python hosting service:
-
-```text
-Build command:
-pip install -r requirements.txt
-
-Start command:
-gunicorn wsgi:app
-```
-
-For Render, create a Web Service, connect your GitHub repository, then use the build and start commands above.
-
-For PythonAnywhere, create a Flask web app and point the WSGI file to `app.py`.
