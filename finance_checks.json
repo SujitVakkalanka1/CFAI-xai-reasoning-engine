@@ -1,0 +1,215 @@
+{
+  "checks": [
+    {
+      "id": "GOOD_CREDIT",
+      "title": "Good credit score",
+      "area": "credit",
+      "severity": 0,
+      "conditions": [
+        {
+          "field": "credit_score",
+          "operator": ">=",
+          "value": 670
+        }
+      ],
+      "message": "The credit score is in a safer range."
+    },
+    {
+      "id": "FAIR_CREDIT",
+      "title": "Credit score needs attention",
+      "area": "credit",
+      "severity": 1,
+      "conditions": [
+        {
+          "field": "credit_score",
+          "operator": ">=",
+          "value": 580
+        },
+        {
+          "field": "credit_score",
+          "operator": "<",
+          "value": 670
+        }
+      ],
+      "message": "The credit score is not very low, but it still needs attention."
+    },
+    {
+      "id": "LOW_CREDIT",
+      "title": "Low credit score",
+      "area": "credit",
+      "severity": 2,
+      "conditions": [
+        {
+          "field": "credit_score",
+          "operator": "<",
+          "value": 580
+        }
+      ],
+      "message": "The credit score is low, so lending risk is higher."
+    },
+    {
+      "id": "NO_MISSED_PAYMENTS",
+      "title": "No recent missed payments",
+      "area": "credit",
+      "severity": 0,
+      "conditions": [
+        {
+          "field": "missed_payments_12m",
+          "operator": "==",
+          "value": 0
+        }
+      ],
+      "message": "There are no missed payments in the last 12 months."
+    },
+    {
+      "id": "ONE_MISSED_PAYMENT",
+      "title": "One recent missed payment",
+      "area": "credit",
+      "severity": 1,
+      "conditions": [
+        {
+          "field": "missed_payments_12m",
+          "operator": "==",
+          "value": 1
+        }
+      ],
+      "message": "There is one missed payment in the last 12 months."
+    },
+    {
+      "id": "MANY_MISSED_PAYMENTS",
+      "title": "Several missed payments",
+      "area": "credit",
+      "severity": 2,
+      "conditions": [
+        {
+          "field": "missed_payments_12m",
+          "operator": ">=",
+          "value": 2
+        }
+      ],
+      "message": "There are several missed payments, which increases repayment concern."
+    },
+    {
+      "id": "LOW_DEBT",
+      "title": "Manageable debt payments",
+      "area": "debt",
+      "severity": 0,
+      "conditions": [
+        {
+          "field": "debt_percent",
+          "operator": "<=",
+          "value": 25
+        }
+      ],
+      "message": "Monthly debt payments use 25% or less of income."
+    },
+    {
+      "id": "MEDIUM_DEBT",
+      "title": "Debt payments need attention",
+      "area": "debt",
+      "severity": 1,
+      "conditions": [
+        {
+          "field": "debt_percent",
+          "operator": ">",
+          "value": 25
+        },
+        {
+          "field": "debt_percent",
+          "operator": "<=",
+          "value": 40
+        }
+      ],
+      "message": "Debt payments use more than 25% of income."
+    },
+    {
+      "id": "HIGH_DEBT",
+      "title": "High debt payments",
+      "area": "debt",
+      "severity": 2,
+      "conditions": [
+        {
+          "field": "debt_percent",
+          "operator": ">",
+          "value": 40
+        }
+      ],
+      "message": "Debt payments use more than 40% of income."
+    },
+    {
+      "id": "GOOD_MONEY_LEFT",
+      "title": "Healthy money left",
+      "area": "cash",
+      "severity": 0,
+      "conditions": [
+        {
+          "field": "money_left_percent",
+          "operator": ">=",
+          "value": 20
+        }
+      ],
+      "message": "At least 20% of income is left after monthly costs."
+    },
+    {
+      "id": "LOW_MONEY_LEFT",
+      "title": "Low money left",
+      "area": "cash",
+      "severity": 1,
+      "conditions": [
+        {
+          "field": "money_left_percent",
+          "operator": ">=",
+          "value": 10
+        },
+        {
+          "field": "money_left_percent",
+          "operator": "<",
+          "value": 20
+        }
+      ],
+      "message": "Less than 20% of income is left after monthly costs."
+    },
+    {
+      "id": "VERY_LOW_MONEY_LEFT",
+      "title": "Very low money left",
+      "area": "cash",
+      "severity": 2,
+      "conditions": [
+        {
+          "field": "money_left_percent",
+          "operator": "<",
+          "value": 10
+        }
+      ],
+      "message": "Less than 10% of income is left after monthly costs."
+    },
+    {
+      "id": "ENOUGH_SAVINGS",
+      "title": "Emergency savings present",
+      "area": "savings",
+      "severity": 0,
+      "conditions": [
+        {
+          "field": "emergency_savings_months",
+          "operator": ">=",
+          "value": 3
+        }
+      ],
+      "message": "Emergency savings cover at least 3 months."
+    },
+    {
+      "id": "LOW_SAVINGS",
+      "title": "Low emergency savings",
+      "area": "savings",
+      "severity": 1,
+      "conditions": [
+        {
+          "field": "emergency_savings_months",
+          "operator": "<",
+          "value": 3
+        }
+      ],
+      "message": "Emergency savings are below 3 months."
+    }
+  ]
+}

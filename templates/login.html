@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Login - Finance Reasoning Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="login-page">
+        <section class="login-card panel">
+            <div class="logo-wrap">
+                <div class="brand-mark">₹</div>
+                <span>Finance Risk Studio</span>
+            </div>
+
+            <h1 class="hero-title">Finance Reasoning Model</h1>
+            <p class="intro-text">Login to review financial risk with clear, simple reasons.</p>
+
+            {% if error_message %}
+                <div class="login-error">{{ error_message }}</div>
+            {% endif %}
+
+            <form method="post">
+                <label>
+                    Username
+                    <input name="username" type="text" autocomplete="username" required>
+                </label>
+
+                <label>
+                    Password
+                    <input name="password" type="password" autocomplete="current-password" required>
+                </label>
+
+                <button type="submit">Login</button>
+            </form>
+
+            <p class="demo-login">
+                Demo login: <strong>admin</strong> / <strong>finance123</strong>
+            </p>
+        </section>
+    </main>
+</body>
+</html>

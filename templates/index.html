@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CFAI Finance Reasoning Model</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <main class="page">
+        <nav class="top-bar panel">
+            <div class="logo-wrap small-logo">
+                <div class="brand-mark">₹</div>
+                <span>Finance Risk Studio</span>
+            </div>
+
+            <div class="nav-right">
+                <span>Welcome, {{ username }}</span>
+                <a href="/logout">Logout</a>
+            </div>
+        </nav>
+
+        <section class="intro">
+            <p class="kicker">Smart finance review</p>
+            <h1 class="hero-title">Finance Reasoning Model</h1>
+            <p class="intro-text">
+                Enter simple financial details and get a polished risk result with clear reasons.
+            </p>
+        </section>
+
+        <section class="main-grid">
+            <form id="financeForm" class="card panel">
+                <div class="section-head">
+                    <h2>Enter Details</h2>
+                    <span>Step 1</span>
+                </div>
+
+                <label>
+                    Monthly income
+                    <input id="monthly_income" type="number" min="1" value="5000" required>
+                </label>
+
+                <label>
+                    Monthly living costs
+                    <input id="monthly_expenses" type="number" min="0" value="2500" required>
+                </label>
+
+                <label>
+                    Monthly debt payments
+                    <input id="monthly_debt_payments" type="number" min="0" value="900" required>
+                </label>
+
+                <label>
+                    Credit score
+                    <input id="credit_score" type="number" min="300" max="900" value="690" required>
+                </label>
+
+                <label>
+                    Missed payments in last 12 months
+                    <input id="missed_payments_12m" type="number" min="0" value="0" required>
+                </label>
+
+                <label>
+                    Emergency savings in months
+                    <input id="emergency_savings_months" type="number" min="0" step="0.5" value="3" required>
+                </label>
+
+                <button type="submit">Show Result</button>
+            </form>
+
+            <section class="card result-card panel">
+                <div class="section-head">
+                    <h2>Result</h2>
+                    <span>Step 2</span>
+                </div>
+
+                <div id="resultBox" class="result-box waiting">
+                    Fill the form and press Show Result.
+                </div>
+
+                <div class="mini-grid">
+                    <div>
+                        <span class="mini-label">Debt use</span>
+                        <strong id="debtPercent">-</strong>
+                    </div>
+                    <div>
+                        <span class="mini-label">Money left</span>
+                        <strong id="moneyLeft">-</strong>
+                    </div>
+                </div>
+
+                <h3>Why</h3>
+                <ul id="reasonList" class="simple-list">
+                    <li>No result yet.</li>
+                </ul>
+
+                <h3>What to improve</h3>
+                <ul id="stepList" class="simple-list">
+                    <li>No result yet.</li>
+                </ul>
+            </section>
+        </section>
+
+        <p class="footer-note">
+            For academic use only. This is not financial advice.
+        </p>
+    </main>
+
+    <script src="/static/app.js"></script>
+</body>
+</html>
